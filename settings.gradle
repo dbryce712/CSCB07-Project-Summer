@@ -1,0 +1,2 @@
+rootProject.name = "CSCB07 Summer"
+include ':app'
