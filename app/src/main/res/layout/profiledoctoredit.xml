@@ -23,9 +23,16 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/editName"
-            android:layout_width="311dp"
+            android:layout_width="315dp"
             android:layout_height="match_parent"
             android:hint="Name" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Button" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <ImageView
@@ -46,7 +53,7 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/editEmail"
-            android:layout_width="310dp"
+            android:layout_width="314dp"
             android:layout_height="wrap_content"
             android:hint="Email" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -59,6 +66,7 @@
         tools:layout_editor_absoluteY="321dp">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/Change Specialization"
             android:layout_width="313dp"
             android:layout_height="wrap_content"
             android:hint="Gender" />
