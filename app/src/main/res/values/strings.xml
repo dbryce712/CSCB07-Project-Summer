@@ -14,4 +14,10 @@
     <string name="doctor_sign_in">Sign in as a Doctor</string>
     <string name="forgot_password">Forgot password?</string>
     <string name="register_page_title">Register</string>
+    <string name="doctor_register">Register as a Doctor</string>
+    <string name="title_activity_doctor_register_code">Doctor_register_code</string>
+    <string name="enter_verification_code">Enter_your_code</string>
+    <string name="title_activity_recover_password">Recover_password</string>
+    <string name="send_email">Send email</string>
+    <string name="enter_email">Please enter your email</string>
 </resources>
