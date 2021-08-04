@@ -14,4 +14,21 @@
     <string name="doctor_sign_in">Sign in as a Doctor</string>
     <string name="forgot_password">Forgot password?</string>
     <string name="register_page_title">Register</string>
+    <!-- Strings related to patient's profile -->
+    <string name="PatientTitle">My Profile</string>
+    <string name="PatientName">Name</string>
+    <string name="PatientEmail">Email</string>
+    <string name="PatientGender">Gender</string>
+    <string name="PatientBirth">Birth date</string>
+    <string name="PatientEdit">Edit</string>
+    <string name="MedicalConditions">Medical Conditions</string>
+    <string name="ConditionPara">I have Diabetes, Alzhimers, and \nhigh blood pressure</string>
+    <string name="PatientDoctorList">View doctor list</string>
+    <!-- Strings related to patient's profile editing page -->
+    <string name="PatientEditName">Name</string>
+    <string name="PatientEditEmail">Email</string>
+    <string name="PatientEditGender">Gender</string>
+    <string name="PatientEditBirthdate">Birth date</string>
+    <string name="PatientEditDone">Done</string>
+
 </resources>
