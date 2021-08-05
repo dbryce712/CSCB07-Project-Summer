@@ -38,5 +38,17 @@
     <string name="title_activity_recover_password">Recover_password</string>
     <string name="send_email">Send email</string>
     <string name="enter_email">Please enter your email</string>
+    <string name="DoctorName">Dr. FullName</string>
+    <string name="ChangeEdit">Save</string>
+    <string name="ProfileName">Profile Name</string>
+    <string name="DoctorEditSave">Save</string>
+    <string name="DoctorEditName">Change Name</string>
+    <string name="DoctorEditEmail">Change Email</string>
+    <string name="DoctorEditSpecialization">Change Specialization</string>
+    <string name="ProfileImageDescription">Profile Image</string>
+    <string name="DoctorEmail">Email</string>
+    <string name="DoctorGender">Gender</string>
+    <string name="DoctorBirthday">Date of Birth</string>
+    <string name="DoctorSpecialization">Specialization</string>
 
 </resources>
