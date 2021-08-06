@@ -55,5 +55,9 @@
     <string name="DoctorGender">Sex</string>
     <string name="DoctorChangeSex">Sex:</string>
     <string name="DoctorChangeBirthday">Date of Birth:</string>
+    <string name="Appointments">Appointments</string>
+    <string name="DoctorPatientList">Patient List</string>
+    <string name="Profile">Profile</string>
+    <string name="Logout">Logout</string>
 
 </resources>
