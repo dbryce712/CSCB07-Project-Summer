@@ -9,9 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CSCB07Summer">
+        <activity android:name=".profile.ProfileEdit"></activity>
         <activity
             android:name=".ui.login.Recover_password"
-            android:label="@string/title_activity_recover_password"></activity>
+            android:label="@string/title_activity_recover_password" />
         <activity
             android:name=".ui.login.Doctor_register_code"
             android:label="@string/title_activity_doctor_register_code" />
