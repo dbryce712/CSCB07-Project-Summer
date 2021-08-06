@@ -47,8 +47,13 @@
     <string name="DoctorEditSpecialization">Change Specialization</string>
     <string name="ProfileImageDescription">Profile Image</string>
     <string name="DoctorEmail">Email</string>
-    <string name="DoctorGender">Gender</string>
     <string name="DoctorBirthday">Date of Birth</string>
     <string name="DoctorSpecialization">Specialization</string>
+    <string name="DoctorEditBirthday">mm/dd/yyyy</string>
+    <string name="Male">Male</string>
+    <string name="Female">Female</string>
+    <string name="DoctorGender">Sex</string>
+    <string name="DoctorChangeSex">Sex:</string>
+    <string name="DoctorChangeBirthday">Date of Birth:</string>
 
 </resources>
