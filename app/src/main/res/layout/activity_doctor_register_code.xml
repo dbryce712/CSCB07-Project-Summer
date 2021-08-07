@@ -12,7 +12,7 @@
     tools:context=".ui.login.Doctor_register_code">
 
     <EditText
-        android:id="@+id/username"
+        android:id="@+id/register_email"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -39,7 +39,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/username" />
+        app:layout_constraintTop_toBottomOf="@+id/register_email" />
 
     <ProgressBar
         android:id="@+id/loading"

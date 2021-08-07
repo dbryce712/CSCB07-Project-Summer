@@ -14,6 +14,7 @@
     <string name="doctor_sign_in">Sign in as a Doctor</string>
     <string name="forgot_password">Forgot password?</string>
     <string name="register_page_title">Register</string>
+    <string name="retype_password">please re-enter password</string>
     <!-- Strings related to patient's profile -->
     <string name="PatientTitle">My Profile</string>
     <string name="PatientName">Name</string>
