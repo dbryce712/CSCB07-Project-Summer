@@ -112,7 +112,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="139dp"
-        android:onClick="registerUser"
+        android:onClick="createAccount"
         android:text="@string/register_page_title"
         app:layout_constraintBottom_toBottomOf="@+id/error"
         app:layout_constraintEnd_toEndOf="parent"
