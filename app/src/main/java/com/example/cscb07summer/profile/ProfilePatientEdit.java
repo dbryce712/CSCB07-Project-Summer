@@ -1,5 +1,6 @@
 package com.example.cscb07summer.profile;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -48,7 +49,13 @@ public class ProfilePatientEdit extends AppCompatActivity {
                 String condition = patMed.getText().toString();
 
                 reference.child("Patient 1").setValue("SetData");
+
+                openProfile();
             }
         });
+    }
+    public void openProfile() {
+        Intent intent = new Intent(this, ProfilePatient.class);
+        startActivity(intent);
     }
 }
