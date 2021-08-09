@@ -11,6 +11,7 @@
         android:theme="@style/Theme.CSCB07Summer">
         <activity android:name=".profile.PatientDoctorList"></activity>
         <activity android:name=".profile.ProfileEdit" />
+        <activity android:name=".profile.DoctorMain" />
         <activity
             android:name=".ui.login.Recover_password"
             android:label="@string/title_activity_recover_password" />
