@@ -53,13 +53,16 @@ public class register extends Activity {
         EditText password2Edit = (EditText) findViewById(R.id.register_password2);
         EditText birthDateEdit = (EditText) findViewById(R.id.register_birth_date);
         EditText nameEdit = (EditText) findViewById(R.id.register_name);
+
         String email = emailEdit.getText().toString();
         String password = passwordEdit.getText().toString();
         String pass2 = password2Edit.getText().toString();
         String birthDate = birthDateEdit.getText().toString();
         String name = nameEdit.getText().toString();
+
         Spinner sp = (Spinner) findViewById(R.id.register_gender);
         String gender = String.valueOf(sp.getSelectedItem());
+
         if(pass2.equals(password) && !gender.equals("Please select your gender") && !name.isEmpty() && !birthDate.isEmpty()){
             auth.createUserWithEmailAndPassword(email, password)
                     .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -79,31 +82,38 @@ public class register extends Activity {
                             }
                         }
                     });
-        }else{
+        }
+        else {
             Toast.makeText(register.this, "Please check again the info that you have entered",
                     Toast.LENGTH_SHORT).show();
         }
 
     }
+
     private void updateUI(FirebaseUser user) {
+
         EditText emailEdit = (EditText) findViewById(R.id.register_email);
         EditText passwordEdit = (EditText) findViewById(R.id.register_password);
         EditText birthDateEdit = (EditText) findViewById(R.id.register_birth_date);
         EditText nameEdit = (EditText) findViewById(R.id.register_name);
+
         String birthDate = birthDateEdit.getText().toString();
         String name = nameEdit.getText().toString();
         Spinner sp = (Spinner) findViewById(R.id.register_gender);
         String gender = String.valueOf(sp.getSelectedItem());
         String email = emailEdit.getText().toString();
         String password = passwordEdit.getText().toString();
+
         if(user == null){
             Intent intent = getIntent();
             finish();
             startActivity(intent);
-        }else{
+        }
+        else {
             DatabaseReference  ref = FirebaseDatabase.getInstance().getReference();
             String uid = user.getUid();
             CheckBox cb = (CheckBox) findViewById(R.id.RegisterCheckBox);
+
             if(cb.isChecked() == true){
                 ref.child("Doctors").child(uid).setValue(uid);
                 ref.child("Doctors").child(uid).child("Birth date").setValue(birthDate);
@@ -111,7 +121,8 @@ public class register extends Activity {
                 ref.child("Doctors").child(uid).child("Gender").setValue(gender);
                 ref.child("Doctors").child(uid).child("Password").setValue(password);
                 ref.child("Doctors").child(uid).child("Name").setValue(name);
-            }else {
+            }
+            else {
                 ref.child("Patients").child(uid).setValue(uid);
                 ref.child("Patients").child(uid).child("Birth date").setValue(birthDate);
                 ref.child("Patients").child(uid).child("Email").setValue(email);

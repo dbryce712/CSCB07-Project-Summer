@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CSCB07Summer">
-        <activity android:name=".profile.PatientDoctorList"></activity>
+        <activity
+            android:name=".ui.login.ForgotPassword"
+            android:exported="true" />
+        <activity android:name=".profile.PatientDoctorList" />
         <activity android:name=".profile.ProfileEdit" />
         <activity android:name=".profile.ProfilePatientEdit" />
         <activity android:name=".profile.ProfilePatient" />
@@ -21,9 +24,6 @@
         <activity android:name=".profile.DoctorProfileEdit" />
         <activity android:name=".profile.DoctorProfilePatientView" />
         <activity android:name=".profile.BookAppointment" />
-        <activity
-            android:name=".ui.login.Recover_password"
-            android:label="@string/title_activity_recover_password" />
         <activity
             android:name=".ui.login.Doctor_register_code"
             android:label="@string/title_activity_doctor_register_code" />

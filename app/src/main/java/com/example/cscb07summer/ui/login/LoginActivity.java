@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -35,7 +36,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.text.BreakIterator;
 
-public class LoginActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
     private static final String UID = "";
     private LoginViewModel loginViewModel;
@@ -43,21 +44,40 @@ public class LoginActivity extends AppCompatActivity {
     private static final String TAG = "LoginInfo";
     private static final String AAA = "aaa";
     private FirebaseAuth mAuth;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mAuth = FirebaseAuth.getInstance();
         setContentView(R.layout.activity_login);
+
+
+
+        mAuth = FirebaseAuth.getInstance();
+
+        Button forgotPassword = (Button) findViewById(R.id.forgot_password_button);
+        forgotPassword.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.forgot_password_button:
+                startActivity(new Intent(this, ForgotPassword.class));
+        }
 
     }
 
     public void signIn(View view) {
+
         EditText emailEdit = (EditText) findViewById(R.id.email);
         EditText passwordEdit = (EditText) findViewById(R.id.password);
+
         String email = emailEdit.getText().toString();
         String password = passwordEdit.getText().toString();
+
         CheckBox cb = (CheckBox) findViewById(R.id.is_Doc_check_login);
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
+
         mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
@@ -71,10 +91,12 @@ public class LoginActivity extends AppCompatActivity {
                                     if (snapshot.child("Doctors").hasChild(user.getUid()) && cb.isChecked()) {
                                         Log.d(TAG, "DoctorSignInWithEmail:success");
                                         updateUI(user);
-                                    }else if(snapshot.child("Patients").hasChild(user.getUid()) && !cb.isChecked()){
+                                    }
+                                    else if(snapshot.child("Patients").hasChild(user.getUid()) && !cb.isChecked()) {
                                         Log.d(TAG, "PatientSignInWithEmail:success");
                                         updateUI(user);
-                                    }else{
+                                    }
+                                    else {
                                         Log.w(TAG, "signInWithEmail:failure", task.getException());
                                         Toast.makeText(LoginActivity.this, "Make sure this is a patient or doctor account",
                                                 Toast.LENGTH_SHORT).show();
@@ -99,6 +121,8 @@ public class LoginActivity extends AppCompatActivity {
                     }
                 });
     }
+
+
     private void updateUI(FirebaseUser user) {
 
 
@@ -124,8 +148,10 @@ public class LoginActivity extends AppCompatActivity {
 
 
     public void goToRegister(View view){
+        //navigates to registration page
         Intent intent = new Intent(this, register.class);
         startActivity(intent);
     }
+
 
 }
