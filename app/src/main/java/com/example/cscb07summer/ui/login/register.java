@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.util.Log;
 import android.widget.Toast;
@@ -50,10 +51,16 @@ public class register extends Activity {
         EditText emailEdit = (EditText) findViewById(R.id.register_email);
         EditText passwordEdit = (EditText) findViewById(R.id.register_password);
         EditText password2Edit = (EditText) findViewById(R.id.register_password2);
+        EditText birthDateEdit = (EditText) findViewById(R.id.register_birth_date);
+        EditText nameEdit = (EditText) findViewById(R.id.register_name);
         String email = emailEdit.getText().toString();
         String password = passwordEdit.getText().toString();
         String pass2 = password2Edit.getText().toString();
-        if(pass2.equals(password)){
+        String birthDate = birthDateEdit.getText().toString();
+        String name = nameEdit.getText().toString();
+        Spinner sp = (Spinner) findViewById(R.id.register_gender);
+        String gender = String.valueOf(sp.getSelectedItem());
+        if(pass2.equals(password) && !gender.equals("Please select your gender") && !name.isEmpty() && !birthDate.isEmpty()){
             auth.createUserWithEmailAndPassword(email, password)
                     .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                         @Override
@@ -73,7 +80,7 @@ public class register extends Activity {
                         }
                     });
         }else{
-            Toast.makeText(register.this, "Two password does not match.",
+            Toast.makeText(register.this, "Please check again the info that you have entered",
                     Toast.LENGTH_SHORT).show();
         }
 
@@ -81,6 +88,12 @@ public class register extends Activity {
     private void updateUI(FirebaseUser user) {
         EditText emailEdit = (EditText) findViewById(R.id.register_email);
         EditText passwordEdit = (EditText) findViewById(R.id.register_password);
+        EditText birthDateEdit = (EditText) findViewById(R.id.register_birth_date);
+        EditText nameEdit = (EditText) findViewById(R.id.register_name);
+        String birthDate = birthDateEdit.getText().toString();
+        String name = nameEdit.getText().toString();
+        Spinner sp = (Spinner) findViewById(R.id.register_gender);
+        String gender = String.valueOf(sp.getSelectedItem());
         String email = emailEdit.getText().toString();
         String password = passwordEdit.getText().toString();
         if(user == null){
@@ -93,18 +106,18 @@ public class register extends Activity {
             CheckBox cb = (CheckBox) findViewById(R.id.RegisterCheckBox);
             if(cb.isChecked() == true){
                 ref.child("Doctors").child(uid).setValue(uid);
-                ref.child("Doctors").child(uid).child("Birth date").setValue("1, jan, 1970");
+                ref.child("Doctors").child(uid).child("Birth date").setValue(birthDate);
                 ref.child("Doctors").child(uid).child("Email").setValue(email);
-                ref.child("Doctors").child(uid).child("Gender").setValue("please enter gender");
+                ref.child("Doctors").child(uid).child("Gender").setValue(gender);
                 ref.child("Doctors").child(uid).child("Password").setValue(password);
-                ref.child("Doctors").child(uid).child("Name").setValue("enter your name here");
+                ref.child("Doctors").child(uid).child("Name").setValue(name);
             }else {
                 ref.child("Patients").child(uid).setValue(uid);
-                ref.child("Patients").child(uid).child("Birth date").setValue("1, jan, 1970");
+                ref.child("Patients").child(uid).child("Birth date").setValue(birthDate);
                 ref.child("Patients").child(uid).child("Email").setValue(email);
-                ref.child("Patients").child(uid).child("Gender").setValue("please enter gender");
+                ref.child("Patients").child(uid).child("Gender").setValue(gender);
                 ref.child("Patients").child(uid).child("Password").setValue(password);
-                ref.child("Patients").child(uid).child("Name").setValue("enter your name here");
+                ref.child("Patients").child(uid).child("Name").setValue(name);
             }
 
             Intent intent = new Intent(this, LoginActivity.class);

@@ -21,6 +21,7 @@ import com.example.cscb07summer.databinding.ActivityLoginBinding;
 import com.example.cscb07summer.profile.DoctorMain;
 import com.example.cscb07summer.profile.ProfilePatient;
 import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -28,6 +29,10 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.ValueEventListener;
+
+import org.jetbrains.annotations.NotNull;
+
 import java.text.BreakIterator;
 
 public class LoginActivity extends AppCompatActivity {
@@ -51,15 +56,39 @@ public class LoginActivity extends AppCompatActivity {
         EditText passwordEdit = (EditText) findViewById(R.id.password);
         String email = emailEdit.getText().toString();
         String password = passwordEdit.getText().toString();
+        CheckBox cb = (CheckBox) findViewById(R.id.is_Doc_check_login);
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
         mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            // Sign in success, update UI with the signed-in user's information
-                            Log.d(TAG, "signInWithEmail:success");
+                            DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
                             FirebaseUser user = mAuth.getCurrentUser();
-                            updateUI(user);
+                            ref.addListenerForSingleValueEvent(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(DataSnapshot snapshot) {
+                                    if (snapshot.child("Doctors").hasChild(user.getUid()) && cb.isChecked()) {
+                                        Log.d(TAG, "DoctorSignInWithEmail:success");
+                                        updateUI(user);
+                                    }else if(snapshot.child("Patients").hasChild(user.getUid()) && !cb.isChecked()){
+                                        Log.d(TAG, "PatientSignInWithEmail:success");
+                                        updateUI(user);
+                                    }else{
+                                        Log.w(TAG, "signInWithEmail:failure", task.getException());
+                                        Toast.makeText(LoginActivity.this, "Make sure this is a patient or doctor account",
+                                                Toast.LENGTH_SHORT).show();
+                                        updateUI(null);
+                                    }
+                                }
+
+                                @Override
+                                public void onCancelled(@NonNull @NotNull DatabaseError error) {
+                                    updateUI(null);
+                                }
+                            });
+
+
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "signInWithEmail:failure", task.getException());
@@ -75,11 +104,11 @@ public class LoginActivity extends AppCompatActivity {
 
         CheckBox cb = (CheckBox) findViewById(R.id.is_Doc_check_login);
         if(user == null){
-            Intent intent = new Intent(this, register.class);
+            Intent intent = getIntent();
+            finish();
             startActivity(intent);
         }else {
             if(cb.isChecked()){
-
                 Intent intent = new Intent(this, DoctorMain.class);
                 intent.putExtra(UID, user.getUid());
                 startActivity(intent);
