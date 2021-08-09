@@ -69,6 +69,7 @@ public class DoctorMain extends AppCompatActivity{
             }
         });
     }
+
     public void openProfile() {
         Intent intent = new Intent(this, DoctorProfile.class);
         startActivity(intent);
