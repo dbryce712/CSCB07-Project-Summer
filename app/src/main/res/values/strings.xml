@@ -60,5 +60,6 @@
     <string name="DoctorPatientList">Patient List</string>
     <string name="Profile">Profile</string>
     <string name="Logout">Logout</string>
+    <string name="patientLink">patientLink</string>
 
 </resources>

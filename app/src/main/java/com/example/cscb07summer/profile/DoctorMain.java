@@ -21,6 +21,8 @@ public class DoctorMain extends AppCompatActivity{
     private Button appointments;
     private Button logout;
 
+    private Button patientLink;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,6 +51,15 @@ public class DoctorMain extends AppCompatActivity{
                 openAppointments();
             }
         });
+
+        patientLink = (Button)findViewById(R.id.PatientLink);
+        patientLink.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openPatientProfile();
+            }
+        });
+
         /**
         logout = (Button)findViewById(R.id.ProfileButton);
         logout.setOnClickListener(new View.OnClickListener() {
@@ -68,6 +79,10 @@ public class DoctorMain extends AppCompatActivity{
     }
     public void openAppointments() {
         Intent intent = new Intent(this, DoctorAppointment.class);
+        startActivity(intent);
+    }
+    public void openPatientProfile(){
+        Intent intent = new Intent(this, ProfilePatient.class);
         startActivity(intent);
     }
     /**
