@@ -12,6 +12,7 @@
         <activity android:name=".profile.PatientDoctorList"></activity>
         <activity android:name=".profile.ProfileEdit" />
         <activity android:name=".profile.ProfilePatient" />
+        <activity android:name=".profile.ProfilePatientEdit" />
         <activity android:name=".profile.DoctorMain" />
         <activity android:name=".profile.DoctorProfile" />
         <activity android:name=".profile.DoctorPatientList" />
