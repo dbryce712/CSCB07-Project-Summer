@@ -60,7 +60,6 @@ public class LoginActivity extends AppCompatActivity {
                             Log.d(TAG, "signInWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
                             updateUI(user);
-
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "signInWithEmail:failure", task.getException());
@@ -80,22 +79,21 @@ public class LoginActivity extends AppCompatActivity {
             startActivity(intent);
         }else {
             if(cb.isChecked()){
+
                 Intent intent = new Intent(this, DoctorMain.class);
-                intent.putExtra(UID, user.getUid());
+                //intent.putExtra(UID, user.getUid());
                 startActivity(intent);
             }else{
 
                 Intent intent = new Intent(this, ProfilePatient.class);
-                intent.putExtra(UID, user.getUid());
+                //intent.putExtra(UID, user.getUid());
                 startActivity(intent);
             }
         }
 
     }
 
-    private void showLoginFailed(@StringRes Integer errorString) {
-        Toast.makeText(getApplicationContext(), errorString, Toast.LENGTH_SHORT).show();
-    }
+
     public void goToRegister(View view){
         Intent intent = new Intent(this, register.class);
         startActivity(intent);
