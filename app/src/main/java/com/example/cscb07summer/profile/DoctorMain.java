@@ -9,6 +9,7 @@ import android.widget.EditText;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.cscb07summer.R;
+import com.example.cscb07summer.ui.login.LoginActivity;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -49,14 +50,14 @@ public class DoctorMain extends AppCompatActivity{
                 openAppointments();
             }
         });
-        /**
-        logout = (Button)findViewById(R.id.ProfileButton);
+
+        logout = (Button)findViewById(R.id.LogoutButton);
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openLogout();
             }
-        });*/
+        });
     }
     public void openProfile() {
         Intent intent = new Intent(this, DoctorProfile.class);
@@ -70,9 +71,9 @@ public class DoctorMain extends AppCompatActivity{
         Intent intent = new Intent(this, DoctorAppointment.class);
         startActivity(intent);
     }
-    /**
     public void openLogout() {
-        Intent intent = new Intent(this, DoctorProfile.class);
+        Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
-    }*/
+        finish();
+    }
 }
