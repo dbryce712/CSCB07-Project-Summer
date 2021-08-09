@@ -12,14 +12,16 @@ import com.google.firebase.database.FirebaseDatabase;
 public class DoctorProfile extends DoctorMain{
 
     FirebaseDatabase rootNode;
-    private DatabaseReference database;
+    DatabaseReference reference;
+
     private Button edit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.profiledoctor);
-        database = FirebaseDatabase.getInstance().getReference();
+        rootNode = FirebaseDatabase.getInstance();
+        reference = rootNode.getReference("Doctors");
 
         edit = (Button)findViewById(R.id.editDoctor);
         edit.setOnClickListener(new View.OnClickListener() {

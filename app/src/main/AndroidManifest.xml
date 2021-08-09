@@ -12,6 +12,12 @@
         <activity android:name=".profile.PatientDoctorList"></activity>
         <activity android:name=".profile.ProfileEdit" />
         <activity android:name=".profile.DoctorMain" />
+        <activity android:name=".profile.DoctorProfile" />
+        <activity android:name=".profile.DoctorPatientList" />
+        <activity android:name=".profile.DoctorAppointment" />
+        <activity android:name=".profile.DoctorProfileEdit" />
+        <activity android:name=".profile.DoctorProfilePatientView" />
+        <activity android:name=".profile.BookAppointment" />
         <activity
             android:name=".ui.login.Recover_password"
             android:label="@string/title_activity_recover_password" />
