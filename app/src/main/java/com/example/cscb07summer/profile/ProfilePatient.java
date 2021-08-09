@@ -23,6 +23,9 @@ public class ProfilePatient extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.profilepatient);
 
+        rootNode = FirebaseDatabase.getInstance();
+        reference = rootNode.getReference("Patients");
+
         edit = (Button)findViewById(R.id.PatientEdit);
         edit.setOnClickListener(new View.OnClickListener() {
             @Override

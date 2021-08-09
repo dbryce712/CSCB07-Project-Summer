@@ -24,6 +24,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.cscb07summer.R;
+import com.example.cscb07summer.profile.DoctorMain;
 import com.example.cscb07summer.ui.login.LoginViewModel;
 import com.example.cscb07summer.ui.login.LoginViewModelFactory;
 import com.example.cscb07summer.databinding.ActivityLoginBinding;
@@ -76,6 +77,7 @@ public class LoginActivity extends AppCompatActivity {
                 }
                 if (loginResult.getSuccess() != null) {
                     updateUiWithUser(loginResult.getSuccess());
+                    goToMain();
                 }
                 setResult(Activity.RESULT_OK);
 
@@ -139,4 +141,8 @@ public class LoginActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void goToMain(){
+        Intent intent = new Intent(this, DoctorMain.class);
+        startActivity(intent);
+    }
 }
