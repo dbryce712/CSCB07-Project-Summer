@@ -81,12 +81,12 @@ public class LoginActivity extends AppCompatActivity {
             if(cb.isChecked()){
 
                 Intent intent = new Intent(this, DoctorMain.class);
-                //intent.putExtra(UID, user.getUid());
+                intent.putExtra(UID, user.getUid());
                 startActivity(intent);
             }else{
 
                 Intent intent = new Intent(this, ProfilePatient.class);
-                //intent.putExtra(UID, user.getUid());
+                intent.putExtra(UID, user.getUid());
                 startActivity(intent);
             }
         }
