@@ -91,8 +91,8 @@ public class register extends Activity {
             DatabaseReference  ref = FirebaseDatabase.getInstance().getReference();
             String uid = user.getUid();
             CheckBox cb = (CheckBox) findViewById(R.id.RegisterCheckBox);
-            if(cb.isChecked()){
-                ref.child("Doctors").setValue(uid);
+            if(cb.isChecked() == true){
+                ref.child("Doctors").child(uid).setValue(uid);
                 ref.child("Doctors").child(uid).child("Birth date").setValue("1, jan, 1970");
                 ref.child("Doctors").child(uid).child("Email").setValue(email);
                 ref.child("Doctors").child(uid).child("Gender").setValue("please enter gender");
@@ -107,7 +107,7 @@ public class register extends Activity {
                 ref.child("Patients").child(uid).child("Name").setValue("enter your name here");
             }
 
-            Intent intent = getIntent();
+            Intent intent = new Intent(this, LoginActivity.class);
             finish();
             startActivity(intent);
         }
