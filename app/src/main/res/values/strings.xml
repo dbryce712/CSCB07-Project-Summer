@@ -60,5 +60,9 @@
     <string name="DoctorPatientList">Patient List</string>
     <string name="Profile">Profile</string>
     <string name="Logout">Logout</string>
+    <string name="bookAppointment">Book Appointment</string>
+    <string name="Exit">Exit</string>
+    <string name="Booking">Book</string>
+    <string name="AvaliableTime">Avaliablity</string>
 
 </resources>

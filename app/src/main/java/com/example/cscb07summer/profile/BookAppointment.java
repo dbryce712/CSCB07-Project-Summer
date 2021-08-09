@@ -4,39 +4,39 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.cscb07summer.R;
+import com.example.cscb07summer.ui.login.LoginActivity;
+import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class ProfilePatient extends AppCompatActivity {
-
+public class BookAppointment extends DoctorMain{
     FirebaseDatabase rootNode;
     DatabaseReference reference;
 
-    private Button edit;
+    private Button book;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.profilepatient);
+        setContentView(R.layout.activity_book_appointment);
 
-        rootNode = FirebaseDatabase.getInstance();
-        reference = rootNode.getReference("Patients");
-
-        edit = (Button)findViewById(R.id.PatientEdit);
-        edit.setOnClickListener(new View.OnClickListener() {
+        book = (Button)findViewById(R.id.BookButton);
+        book.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openProfileEdit();
+                book();
             }
         });
+
     }
 
-    public void openProfileEdit() {
-        Intent intent = new Intent(this, ProfilePatientEdit.class);
-        startActivity(intent);
+    public void book() {
+        // Do booking
     }
+
 }
