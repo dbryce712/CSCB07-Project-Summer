@@ -52,7 +52,7 @@ public class ProfilePatientEdit extends AppCompatActivity {
                 Intent intent = getIntent();
                 String username = intent.getStringExtra("Username");
 
-                reference.child(username).child("Name").setValue(name;
+                reference.child(username).child("Name").setValue(name);
                 reference.child(username).child("Email").setValue(email);
                 reference.child(username).child("Gender").setValue(gender);
                 reference.child(username).child("Birth date").setValue(birth);

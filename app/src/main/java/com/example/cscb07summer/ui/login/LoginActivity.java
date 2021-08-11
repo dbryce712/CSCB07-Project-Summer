@@ -32,9 +32,7 @@ import org.jetbrains.annotations.NotNull;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private LoginViewModel loginViewModel;
     private static final String TAG = "LoginInfo";
-    private static final String AAA = "aaa";
     private FirebaseAuth mAuth;
 
     @Override
@@ -46,7 +44,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         mAuth = FirebaseAuth.getInstance();
 
-        Button forgotPassword = (Button) findViewById(R.id.forgot_password_button);
+        Button forgotPassword = findViewById(R.id.forgot_password_button);
         forgotPassword.setOnClickListener(this);
     }
 

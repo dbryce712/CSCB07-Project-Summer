@@ -18,6 +18,8 @@
     <string name="enter_birthdate">please enter birthdate(mm/dd/yyyy)</string>
     <string name="enter_name">please enter your name</string>
     <string name="enter_gender">please select your gender</string>
+    <string name="enter_specialization">please enter your specializations</string>
+    <string name="submit_and_register">Submit and Register</string>
     <string-array name="gender_spinner">
         <item>Please select your gender</item>
         <item>Male</item>
