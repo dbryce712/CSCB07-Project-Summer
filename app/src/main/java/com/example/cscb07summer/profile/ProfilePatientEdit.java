@@ -63,6 +63,7 @@ public class ProfilePatientEdit extends AppCompatActivity {
     }
     public void openProfile() {
         Intent intent = new Intent(this, ProfilePatient.class);
+        intent.putExtra("Username", getIntent().getStringExtra("Username"));
         startActivity(intent);
     }
 }

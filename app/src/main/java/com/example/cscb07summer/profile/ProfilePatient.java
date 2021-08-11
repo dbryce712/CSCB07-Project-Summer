@@ -39,6 +39,8 @@ public class ProfilePatient extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.profilepatient);
 
+        name = "wrong";
+
         patName = findViewById(R.id.PatientName);
         patEmail = findViewById(R.id.PatientEmail);
         patGender = findViewById(R.id.PatientGender);
@@ -47,6 +49,8 @@ public class ProfilePatient extends AppCompatActivity {
 
         rootNode = FirebaseDatabase.getInstance();
         reference = rootNode.getReference("Patients");
+
+        System.out.println("now listening");
 
         ValueEventListener postListener = new ValueEventListener() {
             @Override
@@ -57,6 +61,8 @@ public class ProfilePatient extends AppCompatActivity {
                 gender = dataSnapshot.child("Gender").getValue(String.class);
                 birth = dataSnapshot.child("Birth date").getValue(String.class);
 
+                System.out.println("Now setting data" + name + email + gender + birth);
+                setAllDataText();
                 // ..
             }
 
@@ -71,9 +77,11 @@ public class ProfilePatient extends AppCompatActivity {
         String username = intent.getStringExtra("Username");
 
 
-        reference.child(username).addValueEventListener(postListener);
+        System.out.println("now entering listener");
 
-        setAllDataText();
+        FirebaseDatabase.getInstance().getReference("Patients").child(username).addValueEventListener(postListener);
+
+
 
         edit = (Button)findViewById(R.id.PatientEdit);
         edit.setOnClickListener(new View.OnClickListener() {
@@ -85,7 +93,9 @@ public class ProfilePatient extends AppCompatActivity {
     }
 
     public void openProfileEdit() {
+
         Intent intent = new Intent(this, ProfilePatientEdit.class);
+        intent.putExtra("Username", getIntent().getStringExtra("Username"));
         startActivity(intent);
     }
 
