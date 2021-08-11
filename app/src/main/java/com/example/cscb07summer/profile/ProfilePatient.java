@@ -30,6 +30,7 @@ public class ProfilePatient extends AppCompatActivity {
     FirebaseDatabase rootNode;
     DatabaseReference reference;
 
+    String name,email,gender,birth;
 
     private Button edit;
 
@@ -51,10 +52,10 @@ public class ProfilePatient extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 // Get Post object and use the values to update the UI
-                String name = dataSnapshot.child("Name").getValue(String.class);
-                String email = dataSnapshot.child("Email").getValue(String.class);
-                String Gender = dataSnapshot.child("Gender").getValue(String.class);
-                String Birth = dataSnapshot.child("Birth date").getValue(String.class);
+                name = dataSnapshot.child("Name").getValue(String.class);
+                email = dataSnapshot.child("Email").getValue(String.class);
+                gender = dataSnapshot.child("Gender").getValue(String.class);
+                birth = dataSnapshot.child("Birth date").getValue(String.class);
 
                 // ..
             }
@@ -69,14 +70,10 @@ public class ProfilePatient extends AppCompatActivity {
         Intent intent = getIntent();
         String username = intent.getStringExtra("Username");
 
-        if(username != null) {
-            reference.child(username).addValueEventListener(postListener);
-        }
-        else {
-            Toast.makeText(ProfilePatient.this, "extras Empty",
-                    Toast.LENGTH_SHORT).show();
-        }
 
+        reference.child(username).addValueEventListener(postListener);
+
+        setAllDataText();
 
         edit = (Button)findViewById(R.id.PatientEdit);
         edit.setOnClickListener(new View.OnClickListener() {
@@ -91,4 +88,12 @@ public class ProfilePatient extends AppCompatActivity {
         Intent intent = new Intent(this, ProfilePatientEdit.class);
         startActivity(intent);
     }
+
+    public void setAllDataText() {
+        patName.setText(name);
+        patEmail.setText(email);
+        patGender.setText(gender);
+        patBirth.setText(birth);
+    }
+
 }
