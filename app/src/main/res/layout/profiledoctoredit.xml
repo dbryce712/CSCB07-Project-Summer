@@ -42,7 +42,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextDate"
+        android:id="@+id/DoctorChangeBirth"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="228dp"
@@ -112,7 +112,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/textInputEditText"
+        android:id="@+id/DoctorChangeSpec"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="404dp"
@@ -122,6 +122,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/DoctorChangeEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/DoctorEditEmail"
@@ -130,6 +131,7 @@
         tools:layout_editor_absoluteX="1dp" />
 
     <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/DoctorChangeName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="164dp"
