@@ -115,12 +115,14 @@ public class register extends Activity {
             CheckBox cb = (CheckBox) findViewById(R.id.RegisterCheckBox);
 
             if(cb.isChecked() == true){
-                ref.child("Doctors").child(uid).setValue(uid);
-                ref.child("Doctors").child(uid).child("Birth date").setValue(birthDate);
-                ref.child("Doctors").child(uid).child("Email").setValue(email);
-                ref.child("Doctors").child(uid).child("Gender").setValue(gender);
-                ref.child("Doctors").child(uid).child("Password").setValue(password);
-                ref.child("Doctors").child(uid).child("Name").setValue(name);
+                Intent intent = new Intent(this, SpecializationActivity.class);
+                intent.putExtra("birthDate", birthDate);
+                intent.putExtra("email", email);
+                intent.putExtra("gender", gender);
+                intent.putExtra("password", password);
+                intent.putExtra("name", name);
+                intent.putExtra("uid", uid);
+                startActivity(intent);
             }
             else {
                 ref.child("Patients").child(uid).setValue(uid);
@@ -129,11 +131,13 @@ public class register extends Activity {
                 ref.child("Patients").child(uid).child("Gender").setValue(gender);
                 ref.child("Patients").child(uid).child("Password").setValue(password);
                 ref.child("Patients").child(uid).child("Name").setValue(name);
+                Toast.makeText(register.this, "register success",
+                        Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(this, LoginActivity.class);
+                startActivity(intent);
             }
 
-            Intent intent = new Intent(this, LoginActivity.class);
-            finish();
-            startActivity(intent);
+
         }
     }
 
