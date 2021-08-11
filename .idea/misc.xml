@@ -3,6 +3,20 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/DarkYouSee/StudioProjects/CSCB07-Project-Summer/app/src/main/res/layout/activity_book_appointment.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/DarkYouSee/StudioProjects/CSCB07-Project-Summer/app/src/main/res/layout/activity_doctor_register_code.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/DarkYouSee/StudioProjects/CSCB07-Project-Summer/app/src/main/res/layout/activity_forgot_password.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/DarkYouSee/StudioProjects/CSCB07-Project-Summer/app/src/main/res/layout/activity_login.xml" value="0.15896739130434784" />
+        <entry key="..\:/Users/DarkYouSee/StudioProjects/CSCB07-Project-Summer/app/src/main/res/layout/activity_patient_doctor_list.xml" value="0.15896739130434784" />
+        <entry key="..\:/Users/DarkYouSee/StudioProjects/CSCB07-Project-Summer/app/src/main/res/layout/activity_profile_edit.xml" value="0.1" />
+        <entry key="..\:/Users/DarkYouSee/StudioProjects/CSCB07-Project-Summer/app/src/main/res/layout/activity_register.xml" value="0.8" />
+        <entry key="..\:/Users/DarkYouSee/StudioProjects/CSCB07-Project-Summer/app/src/main/res/layout/doctor_appointments.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/DarkYouSee/StudioProjects/CSCB07-Project-Summer/app/src/main/res/layout/doctor_main_interface.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/DarkYouSee/StudioProjects/CSCB07-Project-Summer/app/src/main/res/layout/doctor_patient_list.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/DarkYouSee/StudioProjects/CSCB07-Project-Summer/app/src/main/res/layout/doctor_profile_patientview.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/DarkYouSee/StudioProjects/CSCB07-Project-Summer/app/src/main/res/layout/profiledoctoredit.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/DarkYouSee/StudioProjects/CSCB07-Project-Summer/app/src/main/res/layout/profilepatient.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/DarkYouSee/StudioProjects/CSCB07-Project-Summer/app/src/main/res/layout/profilepatientedit.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/wader/AndroidStudioProjects/CSCB07-Project-Summer/app/src/main/res/layout/activity_doctor_register_code.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/wader/AndroidStudioProjects/CSCB07-Project-Summer/app/src/main/res/layout/activity_login.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/wader/AndroidStudioProjects/CSCB07-Project-Summer/app/src/main/res/layout/activity_profile_edit.xml" value="0.25416666666666665" />

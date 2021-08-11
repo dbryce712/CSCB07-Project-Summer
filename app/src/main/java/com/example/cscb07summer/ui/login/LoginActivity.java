@@ -1,24 +1,19 @@
 package com.example.cscb07summer.ui.login;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 import android.util.Log;
 import android.widget.Toast;
 
 
 import androidx.annotation.NonNull;
-import androidx.annotation.StringRes;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.cscb07summer.R;
-import com.example.cscb07summer.databinding.ActivityLoginBinding;
 import com.example.cscb07summer.profile.DoctorMain;
 import com.example.cscb07summer.profile.ProfilePatient;
 import com.google.firebase.database.DataSnapshot;
@@ -34,13 +29,10 @@ import com.google.firebase.database.ValueEventListener;
 
 import org.jetbrains.annotations.NotNull;
 
-import java.text.BreakIterator;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private static final String UID = "";
     private LoginViewModel loginViewModel;
-    private ActivityLoginBinding binding;
     private static final String TAG = "LoginInfo";
     private static final String AAA = "aaa";
     private FirebaseAuth mAuth;
@@ -134,12 +126,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         }else {
             if(cb.isChecked()){
                 Intent intent = new Intent(this, DoctorMain.class);
-                intent.putExtra(UID, user.getUid());
+                intent.putExtra("Username", user.getUid());
                 startActivity(intent);
             }else{
-
                 Intent intent = new Intent(this, ProfilePatient.class);
-                intent.putExtra(UID, user.getUid());
+                intent.putExtra("Username", user.getUid());
                 startActivity(intent);
             }
         }

@@ -14,10 +14,10 @@
     <string name="doctor_sign_in">Sign in as a Doctor</string>
     <string name="forgot_password">Forgot password?</string>
     <string name="register_page_title">Register</string>
-    <string name="retype_password">Please re-enter your password</string>
-    <string name="enter_birthdate">Please enter your birthdate(mm/dd/yyyy)</string>
-    <string name="enter_name">Please enter your name</string>
-    <string name="enter_gender">Please select your gender</string>
+    <string name="retype_password">please re-enter password</string>
+    <string name="enter_birthdate">please enter birthdate(mm/dd/yyyy)</string>
+    <string name="enter_name">please enter your name</string>
+    <string name="enter_gender">please select your gender</string>
     <string-array name="gender_spinner">
         <item>Please select your gender</item>
         <item>Male</item>
