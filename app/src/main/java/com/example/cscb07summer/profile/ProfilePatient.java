@@ -128,10 +128,9 @@ public class ProfilePatient extends AppCompatActivity {
     }
 
     public void Logout() {
-
         Intent intent = new Intent(this, LoginActivity.class);
-
         startActivity(intent);
+        finish();
     }
 
     public void setAllDataText() {
