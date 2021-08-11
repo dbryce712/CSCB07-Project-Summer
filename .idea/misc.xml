@@ -3,12 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-<<<<<<< HEAD
-        <entry key="..\:/Users/jeffj/Desktop/CSCB07booking/CSCB07-Project-Summer/app/src/main/res/layout/profilepatient.xml" value="0.11666666666666667" />
-=======
-        <entry key="..\:/Users/DarkYouSee/StudioProjects/CSCB07-Project-Summer/app/src/main/res/layout/activity_register.xml" value="0.264" />
-        <entry key="..\:/Users/DarkYouSee/StudioProjects/CSCB07-Project-Summer/app/src/main/res/layout/activity_specialization.xml" value="0.25416666666666665" />
->>>>>>> 234b2e3b1aea3085ab9f13afb15bd168898574ff
+        <entry key="..\:/Users/jeffj/Desktop/CSCB07booking/CSCB07-Project-Summer/app/src/main/res/layout/activity_patient_doctor_list.xml" value="0.11666666666666667" />
+        <entry key="..\:/Users/jeffj/Desktop/CSCB07booking/CSCB07-Project-Summer/app/src/main/res/layout/activity_profile_edit.xml" value="0.11666666666666667" />
+        <entry key="..\:/Users/jeffj/Desktop/CSCB07booking/CSCB07-Project-Summer/app/src/main/res/layout/profilepatient.xml" value="0.264" />
         <entry key="..\:/Users/jeffj/Desktop/CSCB07booking/CSCB07-Project-Summer/app/src/main/res/layout/profilepatientedit.xml" value="0.11666666666666667" />
         <entry key="..\:/Users/wader/AndroidStudioProjects/CSCB07-Project-Summer/app/src/main/res/layout/activity_doctor_register_code.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/wader/AndroidStudioProjects/CSCB07-Project-Summer/app/src/main/res/layout/activity_login.xml" value="0.25416666666666665" />

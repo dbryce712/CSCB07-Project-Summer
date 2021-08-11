@@ -25,7 +25,6 @@ import org.jetbrains.annotations.NotNull;
 public class ProfilePatient extends AppCompatActivity {
 
     TextView patName, patEmail, patGender, patBirth;
-    TextView patMed;
 
     FirebaseDatabase rootNode;
     DatabaseReference reference;
@@ -33,6 +32,7 @@ public class ProfilePatient extends AppCompatActivity {
     String name,email,gender,birth;
 
     private Button edit;
+    private Button list;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,25 +45,35 @@ public class ProfilePatient extends AppCompatActivity {
         patEmail = findViewById(R.id.PatientEmail);
         patGender = findViewById(R.id.PatientGender);
         patBirth = findViewById(R.id.PatientBirth);
-        patMed = findViewById(R.id.ConditionPara);
+
 
         rootNode = FirebaseDatabase.getInstance();
         reference = rootNode.getReference("Patients");
 
         System.out.println("now listening");
 
+        Intent intent = getIntent();
+        String username = intent.getStringExtra("Username");
+
+
+        System.out.println("now entering listener" + username);
+
         ValueEventListener postListener = new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 // Get Post object and use the values to update the UI
-                name = dataSnapshot.child("Name").getValue(String.class);
-                email = dataSnapshot.child("Email").getValue(String.class);
-                gender = dataSnapshot.child("Gender").getValue(String.class);
-                birth = dataSnapshot.child("Birth date").getValue(String.class);
+                for(DataSnapshot ds : dataSnapshot.getChildren()) {
+                    if (ds.child("Email").getValue().equals(username)) {
+                        name = ds.child("Name").getValue(String.class);
+                        email = ds.child("Email").getValue(String.class);
+                        gender = ds.child("Gender").getValue(String.class);
+                        birth = ds.child("Birth date").getValue(String.class);
 
-                System.out.println("Now setting data" + name + email + gender + birth);
-                setAllDataText();
-                // ..
+                        System.out.println("Now setting data" + name + email + gender + birth);
+                        setAllDataText();
+                        // ..
+                    }
+                }
             }
 
             @Override
@@ -73,13 +83,7 @@ public class ProfilePatient extends AppCompatActivity {
             }
         };
 
-        Intent intent = getIntent();
-        String username = intent.getStringExtra("Username");
-
-
-        System.out.println("now entering listener");
-
-        FirebaseDatabase.getInstance().getReference("Patients").child(username).addValueEventListener(postListener);
+        FirebaseDatabase.getInstance().getReference("Patients").addValueEventListener(postListener);
 
 
 
@@ -90,11 +94,26 @@ public class ProfilePatient extends AppCompatActivity {
                 openProfileEdit();
             }
         });
+
+        list = (Button)findViewById(R.id.PatientDoctorList);
+        list.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openDoctorList();
+            }
+        });
     }
 
     public void openProfileEdit() {
 
         Intent intent = new Intent(this, ProfilePatientEdit.class);
+        intent.putExtra("Username", getIntent().getStringExtra("Username"));
+        startActivity(intent);
+    }
+
+    public void openDoctorList() {
+
+        Intent intent = new Intent(this, PatientDoctorList.class);
         intent.putExtra("Username", getIntent().getStringExtra("Username"));
         startActivity(intent);
     }

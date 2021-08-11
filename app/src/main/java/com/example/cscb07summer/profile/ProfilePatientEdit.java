@@ -6,19 +6,25 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.cscb07summer.R;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class ProfilePatientEdit extends AppCompatActivity {
 
     TextInputEditText patName, patEmail, patGender, patBirth;
     EditText patMed;
     Button patDone;
+
+    String userkey;
 
     FirebaseDatabase rootNode;
     DatabaseReference reference;
@@ -52,10 +58,30 @@ public class ProfilePatientEdit extends AppCompatActivity {
                 Intent intent = getIntent();
                 String username = intent.getStringExtra("Username");
 
-                reference.child(username).child("Name").setValue(name);
-                reference.child(username).child("Email").setValue(email);
-                reference.child(username).child("Gender").setValue(gender);
-                reference.child(username).child("Birth date").setValue(birth);
+
+
+                reference
+                        .addListenerForSingleValueEvent(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                for(DataSnapshot ds : dataSnapshot.getChildren())
+                                    if(ds.child("Email").getValue().equals(username)) {
+
+                                        userkey = ds.getKey();
+                                        
+                                        reference.child(userkey).child("Name").setValue("Name:"+name);
+                                        reference.child(userkey).child("Email").setValue("Email"+email);
+                                        reference.child(userkey).child("Gender").setValue("Gender"+gender);
+                                        reference.child(userkey).child("Birth date").setValue("Birth date"+birth);
+                                    }
+                            }
+
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError error) {
+
+                            }
+                        });
+
 
                 openProfile();
             }

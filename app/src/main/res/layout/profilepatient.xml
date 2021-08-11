@@ -88,42 +88,8 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/avatars" />
 
-    <ScrollView
-        android:layout_width="413dp"
-        android:layout_height="321dp"
-        android:layout_marginBottom="76dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/ConditionPara"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="@string/ConditionPara" />
-        </LinearLayout>
-    </ScrollView>
-
-    <TextView
-        android:id="@+id/textView11"
-        android:layout_width="197dp"
-        android:layout_height="26dp"
-        android:layout_marginTop="252dp"
-        android:scaleX="1.5"
-        android:scaleY="1.5"
-        android:text="@string/MedicalConditions"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.752"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/PatientTitle" />
-
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/PatientDoctorList"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
