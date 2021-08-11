@@ -33,6 +33,7 @@ public class ProfilePatient extends AppCompatActivity {
 
     private Button edit;
     private Button list;
+    private Button logout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -102,6 +103,14 @@ public class ProfilePatient extends AppCompatActivity {
                 openDoctorList();
             }
         });
+
+        logout = (Button)findViewById(R.id.patientLogout);
+        list.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Logout();
+            }
+        });
     }
 
     public void openProfileEdit() {
@@ -115,6 +124,13 @@ public class ProfilePatient extends AppCompatActivity {
 
         Intent intent = new Intent(this, PatientDoctorList.class);
         intent.putExtra("Username", getIntent().getStringExtra("Username"));
+        startActivity(intent);
+    }
+
+    public void Logout() {
+
+        Intent intent = new Intent(this, LoginActivity.class);
+
         startActivity(intent);
     }
 

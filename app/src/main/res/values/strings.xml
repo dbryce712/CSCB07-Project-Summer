@@ -75,5 +75,6 @@
     <string name="Exit">Exit</string>
     <string name="Booking">Book</string>
     <string name="AvaliableTime">Avaliablity</string>
+    <string name="patientLogout">Logout</string>
 
 </resources>
