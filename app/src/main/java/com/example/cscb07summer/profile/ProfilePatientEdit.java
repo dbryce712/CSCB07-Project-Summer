@@ -9,13 +9,14 @@ import android.widget.EditText;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.cscb07summer.R;
+import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class ProfilePatientEdit extends AppCompatActivity {
 
-    TextInputLayout patName, patEmail, patGender, patBirth;
+    TextInputEditText patName, patEmail, patGender, patBirth;
     EditText patMed;
     Button patDone;
 
@@ -25,7 +26,7 @@ public class ProfilePatientEdit extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.profilepatient);
+        setContentView(R.layout.profilepatientedit);
 
         patName = findViewById(R.id.PatienteditName);
         patEmail = findViewById(R.id.PatienteditEmail);
@@ -42,13 +43,16 @@ public class ProfilePatientEdit extends AppCompatActivity {
                 reference = rootNode.getReference("Patients");
 
                 //get all the values
-                String name = patName.getEditText().getText().toString();
-                String email = patEmail.getEditText().getText().toString();
-                String gender = patGender.getEditText().getText().toString();
-                String birth = patBirth.getEditText().getText().toString();
+                String name = patName.getText().toString();
+                String email = patEmail.getText().toString();
+                String gender = patGender.getText().toString();
+                String birth = patBirth.getText().toString();
                 String condition = patMed.getText().toString();
 
-                reference.child("Patient 1").setValue("SetData");
+                Intent intent = getIntent();
+                String username = intent.getStringExtra("Username");
+
+                reference.child(username).setValue("SetData");
 
                 openProfile();
             }

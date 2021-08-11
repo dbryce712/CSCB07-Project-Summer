@@ -20,7 +20,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/DoctorFullName"
+        android:id="@+id/PatientName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -33,7 +33,7 @@
         app:layout_constraintTop_toBottomOf="@+id/PatientPicture" />
 
     <TextView
-        android:id="@+id/DoctorGender"
+        android:id="@+id/PatientGender"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -52,7 +52,7 @@
         android:layout_marginTop="16dp"
         android:text="@string/PatientEmail"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/DoctorFullName" />
+        app:layout_constraintTop_toBottomOf="@+id/PatientName" />
 
     <TextView
         android:id="@+id/PatientTitle"
@@ -75,7 +75,7 @@
         android:layout_marginTop="16dp"
         android:text="@string/PatientBirth"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/DoctorGender" />
+        app:layout_constraintTop_toBottomOf="@+id/PatientGender" />
 
     <ImageView
         android:id="@+id/PatientPicture"
@@ -102,7 +102,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textView12"
+                android:id="@+id/ConditionPara"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="@string/ConditionPara" />
