@@ -58,8 +58,6 @@ public class ProfilePatientEdit extends AppCompatActivity {
                 Intent intent = getIntent();
                 String username = intent.getStringExtra("Username");
 
-
-
                 reference
                         .addListenerForSingleValueEvent(new ValueEventListener() {
                             @Override
@@ -68,11 +66,11 @@ public class ProfilePatientEdit extends AppCompatActivity {
                                     if(ds.child("Email").getValue().equals(username)) {
 
                                         userkey = ds.getKey();
-                                        
-                                        reference.child(userkey).child("Name").setValue("Name:"+name);
-                                        reference.child(userkey).child("Email").setValue("Email"+email);
-                                        reference.child(userkey).child("Gender").setValue("Gender"+gender);
-                                        reference.child(userkey).child("Birth date").setValue("Birth date"+birth);
+
+                                        reference.child(userkey).child("Name").setValue("Name: "+name);
+                                        reference.child(userkey).child("Email").setValue("Email: "+email);
+                                        reference.child(userkey).child("Gender").setValue("Gender: "+gender);
+                                        reference.child(userkey).child("Birth date").setValue("Birth date: "+birth);
                                     }
                             }
 
