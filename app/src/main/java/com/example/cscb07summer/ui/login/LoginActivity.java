@@ -124,11 +124,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         }else {
             if(cb.isChecked()){
                 Intent intent = new Intent(this, DoctorMain.class);
-                intent.putExtra("Username", user.getUid());
+                intent.putExtra("Username", user.getEmail());
                 startActivity(intent);
             }else{
                 Intent intent = new Intent(this, ProfilePatient.class);
-                intent.putExtra("Username", user.getUid());
+                intent.putExtra("Username", user.getEmail());
                 startActivity(intent);
             }
         }
