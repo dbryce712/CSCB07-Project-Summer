@@ -25,6 +25,11 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.FirebaseAuth;
 import java.text.BreakIterator;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class register extends Activity {
     private FirebaseAuth auth;
@@ -69,14 +74,14 @@ public class register extends Activity {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
-                                // Sign in success, update UI with the signed-in user's information
+                                // Register success, update UI with the signed-in user's information
                                 Log.d(TAG, "createUserWithEmail:success");
                                 FirebaseUser user = auth.getCurrentUser();
                                 updateUI(user);
                             } else {
-                                // If sign in fails, display a message to the user.
+                                // If register in fails, display a message to the user.
                                 Log.w(TAG, "createUserWithEmail:failure", task.getException());
-                                Toast.makeText(register.this, "Email Already registered",
+                                Toast.makeText(register.this, "Email Already registered Or is not a valid email",
                                         Toast.LENGTH_SHORT).show();
                                 updateUI(null);
                             }
@@ -114,6 +119,27 @@ public class register extends Activity {
             String uid = user.getUid();
             CheckBox cb = (CheckBox) findViewById(R.id.RegisterCheckBox);
 
+            /*Pattern password_pattern = Pattern.compile(".{8,}");
+            Pattern birthDate_pattern = Pattern.compile("(0[1-9]|1[0-2])//(0[1-9]|1[0-9]|2[0-9]|3[0-1])//[12][09][0-9][0-9]]");
+
+            Matcher birthDate_matcher = birthDate_pattern.matcher(birthDate);
+            Matcher password_matcher = password_pattern.matcher(password);
+            if(!(birthDate_matcher.matches())){
+                Toast.makeText(register.this, "birth Date entered is not valid(MM/DD/YYYY)",
+                        Toast.LENGTH_SHORT).show();
+                Intent intent = getIntent();
+                user.delete();
+                finish();
+                startActivity(intent);
+            }
+            if(!(password_matcher.matches())){
+                Toast.makeText(register.this, "password is less then 8 characters, please enter a longer password",
+                        Toast.LENGTH_SHORT).show();
+                Intent intent = getIntent();
+                user.delete();
+                finish();
+                startActivity(intent);
+            }*/
             if(cb.isChecked() == true){
                 Intent intent = new Intent(this, SpecializationActivity.class);
                 intent.putExtra("birthDate", birthDate);
@@ -125,12 +151,22 @@ public class register extends Activity {
                 startActivity(intent);
             }
             else {
+                List<String> emptyList = new ArrayList<String>();
+
                 ref.child("Patients").child(uid).setValue(uid);
                 ref.child("Patients").child(uid).child("Birth date").setValue(birthDate);
                 ref.child("Patients").child(uid).child("Email").setValue(email);
                 ref.child("Patients").child(uid).child("Gender").setValue(gender);
                 ref.child("Patients").child(uid).child("Password").setValue(password);
                 ref.child("Patients").child(uid).child("Name").setValue(name);
+                emptyList.add("Previous Doctors");
+                ref.child("Patients").child(uid).child("Previous Doctors").setValue(emptyList);
+                emptyList.clear();
+                emptyList.add("Upcoming Appointments");
+                ref.child("Patients").child(uid).child("Upcoming Appointments").setValue(emptyList);
+                emptyList.clear();
+                emptyList.add("Past Appointments");
+                ref.child("Patients").child(uid).child("Past Appointments").setValue(emptyList);
                 Toast.makeText(register.this, "register success",
                         Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(this, LoginActivity.class);
