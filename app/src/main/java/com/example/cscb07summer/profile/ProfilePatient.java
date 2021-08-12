@@ -36,6 +36,7 @@ public class ProfilePatient extends AppCompatActivity {
 
     private Button edit;
     private Button list;
+    private Button book;
     private Button logout;
 
     @Override
@@ -54,7 +55,7 @@ public class ProfilePatient extends AppCompatActivity {
         Intent intent = getIntent();
         String username = intent.getStringExtra("Username");
 
-        ValueEventListener postListener = new ValueEventListener() {
+        reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 // Get Post object and use the values to update the UI
@@ -74,9 +75,7 @@ public class ProfilePatient extends AppCompatActivity {
                 // Getting Post failed, log a message
                 Log.w(TAG, "loadPost:onCancelled", databaseError.toException());
             }
-        };
-
-        FirebaseDatabase.getInstance().getReference("Patients").addValueEventListener(postListener);
+        });
 
 
 
@@ -96,13 +95,22 @@ public class ProfilePatient extends AppCompatActivity {
             }
         });
 
-        logout = (Button)findViewById(R.id.patientLogout);
+        book = (Button)findViewById(R.id.BookAppointmentButton);
         list.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                bookApp(username);
+            }
+        });
+
+        logout = (Button)findViewById(R.id.patientLogout);
+        logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Logout();
             }
         });
+
     }
 
     public void openProfileEdit(String username) {
@@ -114,6 +122,13 @@ public class ProfilePatient extends AppCompatActivity {
     public void openDoctorList(String username) {
 
         Intent intent = new Intent(this, PatientDoctorList.class);
+        intent.putExtra("Username", username);
+        startActivity(intent);
+    }
+
+    public void bookApp(String username) {
+
+        Intent intent = new Intent(this, BookAppointment.class);
         intent.putExtra("Username", username);
         startActivity(intent);
     }
