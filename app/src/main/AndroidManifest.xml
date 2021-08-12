@@ -10,12 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CSCB07Summer">
         <activity
-            android:name=".profile.PatientViewAppointments"
-            android:exported="true" />
-        <activity
-            android:name=".profile.PatientPastAppointments"
-            android:exported="true" />
-        <activity
             android:name=".ui.login.SpecializationActivity"
             android:exported="true" />
         <activity
@@ -31,6 +25,8 @@
         <activity android:name=".profile.DoctorProfileEdit" />
         <activity android:name=".profile.DoctorProfilePatientView" />
         <activity android:name=".profile.BookAppointment" />
+        <activity
+            android:name=".ui.login.register"/>
         <activity
             android:name=".ui.login.LoginActivity"
             android:exported="true"

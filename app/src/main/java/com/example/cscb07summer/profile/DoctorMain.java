@@ -21,6 +21,7 @@ public class DoctorMain extends AppCompatActivity{
     private Button patientList;
     private Button appointments;
     private Button logout;
+    private Button delete;
     private Button patientLink;
     private FirebaseAuth mAuth;
     FirebaseDatabase rootNode;
@@ -66,6 +67,13 @@ public class DoctorMain extends AppCompatActivity{
                 openLogout();
             }
         });
+        delete = (Button) findViewById(R.id.deleteDoctorButton);
+        delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                deleteAcc();
+            }
+        });
     }
 
     public void openProfile(String username) {
@@ -89,4 +97,8 @@ public class DoctorMain extends AppCompatActivity{
         startActivity(intent);
         finish();
     }
+    public void deleteAcc(){
+
+    }
+
 }
