@@ -116,12 +116,12 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/BookAppointmentButton"
+        android:id="@+id/ViewAppointmentButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="520dp"
-        android:hint="@string/BookAppointment"
-        android:text="@string/BookAppointment"
+        android:hint="@string/Appointments"
+        android:text="@string/Appointments"
         android:textColor="@color/white"
         app:iconTint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
