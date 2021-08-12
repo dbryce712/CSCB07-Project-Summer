@@ -17,6 +17,8 @@ public class DoctorPatientList extends DoctorMain{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.doctor_patient_list);
+
+
     }
 
 }
