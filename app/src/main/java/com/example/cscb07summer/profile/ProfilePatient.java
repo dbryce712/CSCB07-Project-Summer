@@ -96,7 +96,7 @@ public class ProfilePatient extends AppCompatActivity {
         });
 
         book = (Button)findViewById(R.id.BookAppointmentButton);
-        book.setOnClickListener(new View.OnClickListener() {
+        list.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 bookApp(username);
