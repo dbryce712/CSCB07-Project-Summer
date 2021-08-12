@@ -10,7 +10,7 @@
         android:id="@+id/ListOfDoctors"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="24dp"
         android:scaleX="3"
         android:scaleY="3"
         android:text="Your list of doctors"
@@ -54,11 +54,6 @@
                 android:layout_height="wrap_content"
                 android:text="Dr. Jeffrey \n prosthetist " />
 
-            <Button
-                android:id="@+id/button4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Yes I'm using everyone's first names" />
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
