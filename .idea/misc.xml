@@ -3,31 +3,33 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/jeffj/Desktop/CSCB07booking/CSCB07-Project-Summer/app/src/main/res/layout/activity_patient_doctor_list.xml" value="0.144" />
-        <entry key="..\:/Users/jeffj/Desktop/CSCB07booking/CSCB07-Project-Summer/app/src/main/res/layout/activity_profile_edit.xml" value="0.11666666666666667" />
-        <entry key="..\:/Users/jeffj/Desktop/CSCB07booking/CSCB07-Project-Summer/app/src/main/res/layout/profilepatient.xml" value="0.264" />
-        <entry key="..\:/Users/jeffj/Desktop/CSCB07booking/CSCB07-Project-Summer/app/src/main/res/layout/profilepatientedit.xml" value="0.11666666666666667" />
-        <entry key="..\:/Users/wader/AndroidStudioProjects/CSCB07-Project-Summer/app/src/main/res/layout/activity_book_appointment.xml" value="0.4" />
         <entry key="..\:/Users/wader/AndroidStudioProjects/CSCB07-Project-Summer/app/src/main/res/layout/activity_doctor_register_code.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/wader/AndroidStudioProjects/CSCB07-Project-Summer/app/src/main/res/layout/activity_forgot_password.xml" value="0.23324275362318841" />
         <entry key="..\:/Users/wader/AndroidStudioProjects/CSCB07-Project-Summer/app/src/main/res/layout/activity_login.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/wader/AndroidStudioProjects/CSCB07-Project-Summer/app/src/main/res/layout/activity_patient_doctor_list.xml" value="0.4" />
         <entry key="..\:/Users/wader/AndroidStudioProjects/CSCB07-Project-Summer/app/src/main/res/layout/activity_profile_edit.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/wader/AndroidStudioProjects/CSCB07-Project-Summer/app/src/main/res/layout/activity_recover_password.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/wader/AndroidStudioProjects/CSCB07-Project-Summer/app/src/main/res/layout/activity_register.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/wader/AndroidStudioProjects/CSCB07-Project-Summer/app/src/main/res/layout/doctor_appointments.xml" value="0.4" />
+        <entry key="..\:/Users/wader/AndroidStudioProjects/CSCB07-Project-Summer/app/src/main/res/layout/doctor_appointments.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/wader/AndroidStudioProjects/CSCB07-Project-Summer/app/src/main/res/layout/doctor_main_interface.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/wader/AndroidStudioProjects/CSCB07-Project-Summer/app/src/main/res/layout/doctor_patient_list.xml" value="0.4" />
-        <entry key="..\:/Users/wader/AndroidStudioProjects/CSCB07-Project-Summer/app/src/main/res/layout/doctor_profile_patientview.xml" value="0.23324275362318841" />
+        <entry key="..\:/Users/wader/AndroidStudioProjects/CSCB07-Project-Summer/app/src/main/res/layout/doctor_patient_list.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/wader/AndroidStudioProjects/CSCB07-Project-Summer/app/src/main/res/layout/profiledoctor.xml" value="0.4" />
         <entry key="..\:/Users/wader/AndroidStudioProjects/CSCB07-Project-Summer/app/src/main/res/layout/profiledoctoredit.xml" value="0.4" />
         <entry key="..\:/Users/wader/AndroidStudioProjects/CSCB07-Project-Summer/app/src/main/res/layout/profilepatient.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/wader/AndroidStudioProjects/CSCB07-Project-Summer/app/src/main/res/layout/profilepatientedit.xml" value="0.25416666666666665" />
+        <entry key="app/src/main/res/layout/activity_book_appointment.xml" value="0.5" />
         <entry key="app/src/main/res/layout/activity_doctor_register_code.xml" value="0.3494791666666667" />
         <entry key="app/src/main/res/layout/activity_forgot_password.xml" value="0.16995947315096252" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.3223958333333333" />
+        <entry key="app/src/main/res/layout/activity_patient_doctor_list.xml" value="0.5416666666666666" />
         <entry key="app/src/main/res/layout/activity_recover_password.xml" value="0.26296296296296295" />
-        <entry key="app/src/main/res/layout/activity_register.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_register.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/activity_specialization.xml" value="0.5458333333333333" />
+        <entry key="app/src/main/res/layout/doctor_appointments.xml" value="0.5416666666666666" />
+        <entry key="app/src/main/res/layout/doctor_main_interface.xml" value="0.5458333333333333" />
+        <entry key="app/src/main/res/layout/doctor_patient_list.xml" value="0.5458333333333333" />
+        <entry key="app/src/main/res/layout/doctor_profile_patientview.xml" value="0.5458333333333333" />
         <entry key="app/src/main/res/layout/profiledoctor.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/profiledoctoredit.xml" value="0.5458333333333333" />
         <entry key="app/src/main/res/layout/profilepatient.xml" value="0.5" />
         <entry key="app/src/main/res/layout/profilepatientedit.xml" value="0.3463541666666667" />
       </map>

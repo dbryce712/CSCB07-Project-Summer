@@ -87,5 +87,7 @@
     <string name="Timeslot8">Thu 3-4</string>
     <string name="Timeslot9">Fri 1-2</string>
     <string name="Timeslot10">Fri 3-4</string>
+    <string name="PatientPast">Past Appointments</string>
+    <string name="PatientUpcoming">Upcoming Appointments</string>
 
 </resources>

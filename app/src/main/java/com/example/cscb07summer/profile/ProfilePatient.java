@@ -99,7 +99,7 @@ public class ProfilePatient extends AppCompatActivity {
         list.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                bookApp(username);
+                viewApp(username);
             }
         });
 
@@ -126,9 +126,9 @@ public class ProfilePatient extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void bookApp(String username) {
+    public void viewApp(String username) {
 
-        Intent intent = new Intent(this, BookAppointment.class);
+        Intent intent = new Intent(this, PatientViewAppointments.class);
         intent.putExtra("Username", username);
         startActivity(intent);
     }
