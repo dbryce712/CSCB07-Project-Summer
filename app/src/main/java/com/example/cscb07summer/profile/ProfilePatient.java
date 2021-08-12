@@ -1,7 +1,10 @@
 package com.example.cscb07summer.profile;
 
+import static android.content.ContentValues.TAG;
+
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -40,28 +43,20 @@ public class ProfilePatient extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.profilepatient);
 
-        name = "wrong";
-
         patName = findViewById(R.id.PatientName);
         patEmail = findViewById(R.id.PatientEmail);
         patGender = findViewById(R.id.PatientGender);
         patBirth = findViewById(R.id.PatientBirth);
 
-
         rootNode = FirebaseDatabase.getInstance();
         reference = rootNode.getReference("Patients");
-
-        //System.out.println("now listening");
 
         Intent intent = getIntent();
         String username = intent.getStringExtra("Username");
 
-
-        //System.out.println("now entering listener" + username);
-
         ValueEventListener postListener = new ValueEventListener() {
             @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 // Get Post object and use the values to update the UI
                 for(DataSnapshot ds : dataSnapshot.getChildren()) {
                     if (ds.child("Email").getValue().equals(username)) {
@@ -69,18 +64,15 @@ public class ProfilePatient extends AppCompatActivity {
                         email = ds.child("Email").getValue(String.class);
                         gender = ds.child("Gender").getValue(String.class);
                         birth = ds.child("Birth date").getValue(String.class);
-
-                        //System.out.println("Now setting data" + name + email + gender + birth);
                         setAllDataText();
-                        // ..
                     }
                 }
             }
 
             @Override
-            public void onCancelled(@NonNull @NotNull DatabaseError databaseError) {
+            public void onCancelled(@NonNull DatabaseError databaseError) {
                 // Getting Post failed, log a message
-                //Log.w(TAG, "loadPost:onCancelled", databaseError.toException());
+                Log.w(TAG, "loadPost:onCancelled", databaseError.toException());
             }
         };
 
@@ -92,7 +84,7 @@ public class ProfilePatient extends AppCompatActivity {
         edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openProfileEdit();
+                openProfileEdit(username);
             }
         });
 
@@ -100,7 +92,7 @@ public class ProfilePatient extends AppCompatActivity {
         list.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openDoctorList();
+                openDoctorList(username);
             }
         });
 
@@ -113,16 +105,16 @@ public class ProfilePatient extends AppCompatActivity {
         });
     }
 
-    public void openProfileEdit() {
+    public void openProfileEdit(String username) {
         Intent intent = new Intent(this, ProfilePatientEdit.class);
-        intent.putExtra("Username", getIntent().getStringExtra("Username"));
+        intent.putExtra("Username", username);
         startActivity(intent);
     }
 
-    public void openDoctorList() {
+    public void openDoctorList(String username) {
 
         Intent intent = new Intent(this, PatientDoctorList.class);
-        intent.putExtra("Username", getIntent().getStringExtra("Username"));
+        intent.putExtra("Username", username);
         startActivity(intent);
     }
 
