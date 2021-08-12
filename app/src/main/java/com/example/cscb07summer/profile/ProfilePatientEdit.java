@@ -53,25 +53,29 @@ public class ProfilePatientEdit extends AppCompatActivity {
                 String email = patEmail.getText().toString();
                 String gender = patGender.getText().toString();
                 String birth = patBirth.getText().toString();
-                String condition = patMed.getText().toString();
+
 
                 Intent intent = getIntent();
                 String username = intent.getStringExtra("Username");
 
-                reference
-                        .addListenerForSingleValueEvent(new ValueEventListener() {
+                System.out.println("setting values for: "+ username);
+
+                reference.addValueEventListener(new ValueEventListener() {
                             @Override
                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                for(DataSnapshot ds : dataSnapshot.getChildren())
-                                    if(ds.child("Email").getValue().equals(username)) {
-
+                                for(DataSnapshot ds : dataSnapshot.getChildren()) {
+                                    System.out.println("Patient at: " + ds.getKey());
+                                    System.out.println("email comparision " + username + " === " + ds.child("Email").getValue());
+                                    if (ds.child("Email").getValue().equals(username)) {
+                                        System.out.println("connection found");
                                         userkey = ds.getKey();
-
-                                        reference.child(userkey).child("Name").setValue("Name: "+name);
-                                        reference.child(userkey).child("Email").setValue("Email: "+email);
-                                        reference.child(userkey).child("Gender").setValue("Gender: "+gender);
-                                        reference.child(userkey).child("Birth date").setValue("Birth date: "+birth);
+                                        System.out.println("getting: " + userkey);
+                                        reference.child(userkey).child("Name").setValue(name);
+                                        reference.child(userkey).child("Email").setValue(email);
+                                        reference.child(userkey).child("Gender").setValue(gender);
+                                        reference.child(userkey).child("Birth date").setValue(birth);
                                     }
+                                }
                             }
 
                             @Override
@@ -79,6 +83,8 @@ public class ProfilePatientEdit extends AppCompatActivity {
 
                             }
                         });
+
+                System.out.println("userkey: " + userkey);
 
 
                 openProfile();
