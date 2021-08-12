@@ -10,15 +10,15 @@
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
     <string name="title_activity_login">LoginActivity</string>
-    <string name="title_activity_register">register</string>
+    <string name="title_activity_register">Register</string>
     <string name="doctor_sign_in">Sign in as a Doctor</string>
     <string name="forgot_password">Forgot password?</string>
     <string name="register_page_title">Register</string>
-    <string name="retype_password">please re-enter password</string>
-    <string name="enter_birthdate">please enter birthdate(mm/dd/yyyy)</string>
-    <string name="enter_name">please enter your name</string>
-    <string name="enter_gender">please select your gender</string>
-    <string name="enter_specialization">please enter your specializations</string>
+    <string name="retype_password">Please re-enter password</string>
+    <string name="enter_birthdate">Enter birthdate (mm/dd/yyyy)</string>
+    <string name="enter_name">Please enter your name</string>
+    <string name="enter_gender">Please select your gender</string>
+    <string name="enter_specialization">Please enter your specializations</string>
     <string name="submit_and_register">Submit and Register</string>
     <string-array name="gender_spinner">
         <item>Please select your gender</item>
@@ -34,7 +34,7 @@
     <string name="PatientBirth">Birth date</string>
     <string name="PatientEdit">Edit</string>
     <string name="MedicalConditions">Medical Conditions</string>
-    <string name="ConditionPara">I have Diabetes, Alzhimers, and \nhigh blood pressure</string>
+    <string name="ConditionPara">I have Diabetes, Alzheimer\'s, and \nhigh blood pressure</string>
     <string name="PatientDoctorList">View doctor list</string>
     <!-- Strings related to patient's profile editing page -->
     <string name="PatientEditName">Name</string>
@@ -74,7 +74,7 @@
     <string name="bookAppointment">Book Appointment</string>
     <string name="Exit">Exit</string>
     <string name="Booking">Book</string>
-    <string name="AvaliableTime">Avaliablity</string>
+    <string name="AvailableTime">Availability</string>
     <string name="patientLogout">Logout</string>
     <string name="BookAppointment">Book Appointment</string>
     <string name="Timeslot1">Mon 9-10</string>

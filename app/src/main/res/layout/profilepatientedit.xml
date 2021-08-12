@@ -27,7 +27,7 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/PatienteditName"
-            android:layout_width="311dp"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:hint="@string/PatientEditName" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -53,7 +53,7 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/PatienteditEmail"
-            android:layout_width="311dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/PatientEditEmail" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -68,7 +68,7 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/PatientEditGender"
-            android:layout_width="310dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/PatientEditGender" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -83,7 +83,7 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/PatientEditBirth"
-            android:layout_width="307dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/PatientEditBirthdate" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -104,7 +104,7 @@
 
             <EditText
                 android:id="@+id/PatientconditionEdit"
-                android:layout_width="392dp"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:ems="10"
                 android:gravity="start|top"

@@ -33,7 +33,7 @@
 
     <Button
         android:id="@+id/ProfileButton"
-        android:layout_width="138dp"
+        android:layout_width="150dp"
         android:layout_height="60dp"
         android:layout_marginTop="196dp"
         android:hint="@string/Profile"
@@ -44,41 +44,42 @@
 
     <Button
         android:id="@+id/PatientListButton"
-        android:layout_width="140dp"
-        android:layout_height="56dp"
-        android:layout_marginTop="296dp"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="24dp"
         android:hint="@string/DoctorPatientList"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/ProfileButton" />
 
     <Button
         android:id="@+id/AppointmentsButton"
-        android:layout_width="151dp"
-        android:layout_height="59dp"
-        android:layout_marginTop="376dp"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="24dp"
         android:hint="@string/Appointments"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/profile" />
+        app:layout_constraintTop_toBottomOf="@+id/PatientListButton" />
 
     <Button
         android:id="@+id/LogoutButton"
-        android:layout_width="148dp"
-        android:layout_height="54dp"
-        android:layout_marginTop="488dp"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="24dp"
         android:hint="@string/Logout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/AppointmentsButton" />
 
     <Button
         android:id="@+id/PatientLink"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
         android:text="Patient"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
