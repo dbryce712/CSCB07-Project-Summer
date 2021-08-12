@@ -86,6 +86,8 @@
         android:layout_marginTop="32dp"
         android:onClick="goToRegister"
         android:text="@string/title_activity_register"
+        app:backgroundTint="@color/purple_500"
+        app:iconTint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.868"
         app:layout_constraintStart_toStartOf="parent"

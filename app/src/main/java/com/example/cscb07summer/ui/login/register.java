@@ -119,27 +119,6 @@ public class register extends Activity {
             String uid = user.getUid();
             CheckBox cb = (CheckBox) findViewById(R.id.RegisterCheckBox);
 
-            /*Pattern password_pattern = Pattern.compile(".{8,}");
-            Pattern birthDate_pattern = Pattern.compile("(0[1-9]|1[0-2])//(0[1-9]|1[0-9]|2[0-9]|3[0-1])//[12][09][0-9][0-9]]");
-
-            Matcher birthDate_matcher = birthDate_pattern.matcher(birthDate);
-            Matcher password_matcher = password_pattern.matcher(password);
-            if(!(birthDate_matcher.matches())){
-                Toast.makeText(register.this, "birth Date entered is not valid(MM/DD/YYYY)",
-                        Toast.LENGTH_SHORT).show();
-                Intent intent = getIntent();
-                user.delete();
-                finish();
-                startActivity(intent);
-            }
-            if(!(password_matcher.matches())){
-                Toast.makeText(register.this, "password is less then 8 characters, please enter a longer password",
-                        Toast.LENGTH_SHORT).show();
-                Intent intent = getIntent();
-                user.delete();
-                finish();
-                startActivity(intent);
-            }*/
             if(cb.isChecked() == true){
                 Intent intent = new Intent(this, SpecializationActivity.class);
                 intent.putExtra("birthDate", birthDate);

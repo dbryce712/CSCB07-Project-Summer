@@ -2,26 +2,17 @@ package com.example.cscb07summer.profile;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.cscb07summer.R;
 import com.example.cscb07summer.ui.login.LoginActivity;
-import com.example.cscb07summer.ui.login.register;
-import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 
 public class DoctorMain extends AppCompatActivity{
@@ -68,14 +59,6 @@ public class DoctorMain extends AppCompatActivity{
             }
         });
 
-        patientLink = (Button)findViewById(R.id.PatientLink);
-        patientLink.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openPatientProfile();
-            }
-        });
-
         logout = (Button)findViewById(R.id.LogoutButton);
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -98,10 +81,6 @@ public class DoctorMain extends AppCompatActivity{
     public void openAppointments(String username) {
         Intent intent = new Intent(this, DoctorAppointment.class);
         intent.putExtra("Username", username);
-        startActivity(intent);
-    }
-    public void openPatientProfile(){
-        Intent intent = new Intent(this, ProfilePatient.class);
         startActivity(intent);
     }
 
