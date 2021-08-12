@@ -60,6 +60,36 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="DR. WHO \n Time Traveler" />
+
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="DR.JONES \n ARCHAEOLOGIST" />
+
+            <Button
+                android:id="@+id/button8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="DR.HOUSE \n GENERAL DOCTOR" />
+
+            <Button
+                android:id="@+id/button9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="DR.BROWN \n SCIENTIST" />
+
+            <Button
+                android:id="@+id/button10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="DR.MCCRAE \n PHYSICIAN" />
+
+            <Button
+                android:id="@+id/button11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="DR. PIERCE \n FIELD DOCTOR" />
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
