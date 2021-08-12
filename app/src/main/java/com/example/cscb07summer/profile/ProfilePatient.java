@@ -51,13 +51,13 @@ public class ProfilePatient extends AppCompatActivity {
         rootNode = FirebaseDatabase.getInstance();
         reference = rootNode.getReference("Patients");
 
-        System.out.println("now listening");
+        //System.out.println("now listening");
 
         Intent intent = getIntent();
         String username = intent.getStringExtra("Username");
 
 
-        System.out.println("now entering listener" + username);
+        //System.out.println("now entering listener" + username);
 
         ValueEventListener postListener = new ValueEventListener() {
             @Override
@@ -70,7 +70,7 @@ public class ProfilePatient extends AppCompatActivity {
                         gender = ds.child("Gender").getValue(String.class);
                         birth = ds.child("Birth date").getValue(String.class);
 
-                        System.out.println("Now setting data" + name + email + gender + birth);
+                        //System.out.println("Now setting data" + name + email + gender + birth);
                         setAllDataText();
                         // ..
                     }
@@ -114,7 +114,6 @@ public class ProfilePatient extends AppCompatActivity {
     }
 
     public void openProfileEdit() {
-
         Intent intent = new Intent(this, ProfilePatientEdit.class);
         intent.putExtra("Username", getIntent().getStringExtra("Username"));
         startActivity(intent);
