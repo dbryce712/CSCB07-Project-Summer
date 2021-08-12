@@ -77,5 +77,15 @@
     <string name="AvaliableTime">Avaliablity</string>
     <string name="patientLogout">Logout</string>
     <string name="BookAppointment">Book Appointment</string>
+    <string name="Timeslot1">Mon 9-10</string>
+    <string name="Timeslot2">Mon 11-12</string>
+    <string name="Timeslot3">Mon 3-4</string>
+    <string name="Timeslot4">Tue 1-2</string>
+    <string name="Timeslot5">Tue 3-4</string>
+    <string name="Timeslot6">Tue 4-5</string>
+    <string name="Timeslot7">Thu 11-12</string>
+    <string name="Timeslot8">Thu 3-4</string>
+    <string name="Timeslot9">Fri 1-2</string>
+    <string name="Timeslot10">Fri 3-4</string>
 
 </resources>
